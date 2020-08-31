@@ -55,14 +55,11 @@ cursor: pointer;
 a {
       color: black;
 }
-.bookTitle, h1, .bookDetail h5, .bookNav, label, button, .reviews > p:first-child, time { 
+.bookTitle, h1, .bookDetail h5, .bookNav, label, button, .reviews > p:first-child, .reviews .reviewTitle { 
       font-family: 'Source Sans Pro', sans-serif;
       text-transform: capitalize;
 }
-.reviews .reviewEmail {
-      font-family: 'Source Sans Pro', sans-serif;
-}
-.bookAuthor, .bookDetail p { 
+.bookAuthor, .bookDetail p, time { 
       font-family: 'Crimson', serif;
 }
 .book-content {

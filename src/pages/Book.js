@@ -18,11 +18,12 @@ const Book = () => {
 
       const handleReviewSubmit = async(state) => {
             console.log(history)
-            let { email, review } = state
-            if (!email || !review) return
+            let { email, review, title } = state
+            if (!email || !review || !title) return
             let body = {
                   email, 
                   review,
+                  title, 
                   bookID
             }
             console.log(body)

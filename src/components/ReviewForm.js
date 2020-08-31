@@ -13,7 +13,6 @@ const ReviewForm = ({ handleReviewSubmit }) => {
             e.preventDefault()
             if (!validateFields()) return
             toggle()
-            console.log(state)
             return handleReviewSubmit(state)
       }
 
@@ -26,6 +25,8 @@ const ReviewForm = ({ handleReviewSubmit }) => {
             if (!state.email) errors.email = 'Required'
 
             if (!state.review) errors.review = 'Required'
+
+            if (!state.title) errors.title = 'Required'
 
             setErrors({errors})
 		return !Object.keys(errors).length
@@ -45,7 +46,16 @@ const ReviewForm = ({ handleReviewSubmit }) => {
                               <FormFeedback>{get(errors, 'email', '')}</FormFeedback>
                         </FormGroup>
                         <FormGroup>
-                              <Label for="exampleText">Review</Label>
+                              <Label for="title">Title</Label>
+                              <Input type="text" name="title" 
+                                    required
+                                    // invalid={errors && errors.title ? true : false}
+                                    onChange={ (e) => onChange('title', e.target.value)}
+                              />
+                              <FormFeedback>{get(errors, 'title', '')}</FormFeedback>
+                        </FormGroup> 
+                        <FormGroup>
+                              <Label for="review">Review</Label>
                               <Input type="textarea" name="review" 
                                     required
                                     // invalid={errors && errors.review ? true : false}
