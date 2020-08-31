@@ -1,13 +1,107 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.border-box, a, article, aside, blockquote, body, code, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=url], legend, li, main, nav, ol, p, pre, section, table, td, textarea, th, tr, ul {
+-webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.grow {
+-webkit-transition: all .2s ease-in-out;
+-o-transition: all .2s ease-in-out;
+transition: all .2s ease-in-out;
+}
+.grow:hover {
+-webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+            transform: scale(1.05);
+color: white;
+text-decoration: none;
+}
+.cardGrow { -webkit-transition: all .2s ease-in-out; -o-transition: all .2s ease-in-out; transition: all .2s ease-in-out; }
+.cardGrow:hover { 
+-webkit-transform: scale(1.05); 
+      -ms-transform: scale(1.05); 
+      transform: scale(1.05); 
+}
+a:hover {
+text-decoration: none;
+} 
+img {
+      max-width: 100%;
+      border-style: none;
+      vertical-align: middle;
+}
+.pointer {
+cursor: pointer;
+} 
+
+.bookImgBox {
+      height: 170px;
+      width: 120px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bookImgBox img {
+      -webkit-box-shadow: -1px 6px 6px 1px rgba(45, 35, 66, 0.25);
+                  box-shadow: -1px 6px 6px 1px rgba(45, 35, 66, 0.25);
+      border-radius: 5px;
+      -o-object-fit: cover;
+            object-fit: cover;
+      width: 100%;
+      max-height: 100%;
+}
+.resourceHover {
+-webkit-box-shadow: 0 0 2rem rgba(0,0,0,.1);
+            box-shadow: 0 0 2rem rgba(0,0,0,.1);
+-webkit-transform: translate3d(0px, -1px, 0px);
+            transform: translate3d(0px, -1px, 0px);
+}
+a {
+      color: black;
+}
+.bookTitle, h1, .bookDetail h5, .bookNav, label, button, .reviews > p:first-child, time { 
+      font-family: 'Source Sans Pro', sans-serif;
+      text-transform: capitalize;
+}
+.reviews .reviewEmail {
+      font-family: 'Source Sans Pro', sans-serif;
+}
+.bookAuthor, .bookDetail p { 
+      font-family: 'Crimson', serif;
+}
+.book-content {
+      width: 100%;
+      border: 1px solid white;
+      background-color: white;
+      border-radius: 10px;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      height: 130px;
+}
+.bookDetail {
+      position: relative;
+}
+.bookDetail > div:first-child i {
+      position: absolute;
+      top: -5px;
+      left: 40px;
+}
+.bookDetailBorder {
+      border: 1px solid white;
+      background-color: white;
+      border-radius: 10px;
+      position: relative;
+} 
+.bookNav li {
+      list-style: none;
+      font-size: .9rem;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+@media screen and (min-width: 992px) {
+
+}
+@media screen and (min-width: 1200px) {
+
+}
+@media screen and (min-width: 1400px) {
+
 }
