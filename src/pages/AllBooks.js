@@ -5,12 +5,14 @@ import About from '../components/BookNav/About'
 import Reviews from '../components/BookNav/Reviews'
 import BookNav from '../components/BookNav/index'
 import Form from '../components/BookNav/ReviewForm'
+import { Alert } from "reactstrap"
 
 const {REACT_APP_JSONBOX_URL} = process.env
 
 const Book = () => {
       const [reviews, setReviews] = useState([]) 
       const [navItem, setNavItem] = useState("") 
+      const [alert, setAlert] = useState("") 
       
       const history = useHistory()
       const { title, author, img, blurb, bookID } = history.location.state
@@ -40,6 +42,9 @@ const Book = () => {
                   if (status === 200) { 
                         let reviews = data.filter(ele => ele.bookID === bookID)
                         setReviews(reviews)
+                  } else {
+                        setAlert("The review submission was unsuccessful.")
+                        navItem("Reviews")
                   }
             }
             fetchReviewsByBookID()
@@ -66,6 +71,7 @@ const Book = () => {
                   </div>
                   <div className="container mt-1" style={{height: '100vh'}}>
                         <div className="bookDetailContent">
+                              { alert? <Alert color="danger">{alert}</Alert> : null }
                               <div className="row mt-3">
                                     <div className="col-12 d-flex justify-content-center">
                                           <div className="bookImgBox">
