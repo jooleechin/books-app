@@ -17,3 +17,12 @@ You will also see any lint errors in the console.
 
 This will add all of the books from the .txt file to the database.
 
+## Screnshots
+### Homepage View:
+<img src="./src/assests/allbooks.png" width="390">   
+
+### Book Detail View:
+<img src="./src/assests/book detail.png" width="390">   
+
+### Book Reviews View:
+<img src="./src/assests/review.png" width="390">   
