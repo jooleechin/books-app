@@ -34,7 +34,6 @@ const ReviewForm = ({ handleReviewSubmit }) => {
 
       return (
             <div className="col-12 mb-3">
-                  <h5>Submit a Review</h5>
                   <Form onSubmit={(e) => submit(e)}>
                         <FormGroup>
                               <Label for="email">Email</Label>

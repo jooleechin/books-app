@@ -1,10 +1,10 @@
 import React, {useState, useEffect, Fragment} from "react"
 import axios from 'axios'
-import Book from '../components/BookComp'
+import Book from '../components/Book'
 
 const {REACT_APP_JSONBOX_URL} = process.env
 
-const Home = ({ img, index, key, handleReviewSubmit }) => {
+const Home = () => {
       const [books, setBooks] = useState([])
 
       const fetchBooks = async() => {
@@ -37,7 +37,6 @@ const Home = ({ img, index, key, handleReviewSubmit }) => {
                                                 index={idx}
                                                 bookID={book._id}
                                                 key={book.key}
-                                                handleReviewSubmit={handleReviewSubmit}
                                           />
                                     ))}
                               </div>

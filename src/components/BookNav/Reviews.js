@@ -12,7 +12,7 @@ const Reviews = ({reviews}) => {
       }
       return ( 
             <div className="col-12">
-                  <h5>Reviews</h5>
+                  {/* <h5>Reviews</h5> */}
                   {reviews && reviews.length === 0 
                         ? <p>No reviews.</p> 
                         : reviews.map(ele => {

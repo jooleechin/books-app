@@ -1,23 +1,22 @@
 import React, {useState, useEffect} from "react"
 import axios from 'axios'
 import {useHistory} from 'react-router'
-import About from '../components/About'
-import Reviews from '../components/Reviews'
-import BookNav from '../components/BookNav'
-import Form from '../components/ReviewForm'
+import About from '../components/BookNav/About'
+import Reviews from '../components/BookNav/Reviews'
+import BookNav from '../components/BookNav/index'
+import Form from '../components/BookNav/ReviewForm'
 
 const {REACT_APP_JSONBOX_URL} = process.env
 
 const Book = () => {
       const [reviews, setReviews] = useState([]) 
-      const [navItem, setNavItem] = useState("Reviews") 
+      const [navItem, setNavItem] = useState("") 
       
       const history = useHistory()
       const { title, author, img, blurb, bookID } = history.location.state
       const goBack = () => history.goBack()
 
       const handleReviewSubmit = async(state) => {
-            console.log(history)
             let { email, review, title } = state
             if (!email || !review || !title) return
             let body = {
@@ -26,7 +25,6 @@ const Book = () => {
                   title, 
                   bookID
             }
-            console.log(body)
             const { data, status } = await axios.post(`${REACT_APP_JSONBOX_URL}reviews`, body)
             if (status === 200) {
                   setReviews([...reviews, data])
@@ -34,10 +32,7 @@ const Book = () => {
             }
       }  
 
-      const navClick = (navItem) => {
-            console.log(navItem)
-            setNavItem(navItem)
-      }
+      const navClick = (navItem) => setNavItem(navItem)
 
       useEffect(() => {
             const fetchReviewsByBookID = async() => {
@@ -70,11 +65,11 @@ const Book = () => {
                         </div>
                   </div>
                   <div className="container mt-1" style={{height: '100vh'}}>
-                        <div className="bookDetailBorder">
+                        <div className="bookDetailContent">
                               <div className="row mt-3">
                                     <div className="col-12 d-flex justify-content-center">
                                           <div className="bookImgBox">
-                                                <img src={img} />
+                                                <img src={img}  alt={title + 'img'}/>
                                           </div>
                                     </div>
                               </div>
@@ -93,31 +88,6 @@ const Book = () => {
                               <div className="row pr-3 pl-3">
                                     {renderNav()} 
                               </div>
-                              {/* <div className="row">
-                                    <div className='col-12'>
-                                          <h5>About</h5>
-                                          <p>{blurb}</p>
-                                    </div>
-                              </div>
-                              <div className="row">
-                                    <div className="col-12">
-                                          <h5>Reviews</h5>
-                                          {reviews && reviews.length === 0 
-                                                ? <p>No reviews.</p> 
-                                                : reviews.map(ele => {
-                                                      return (
-                                                            <div>
-                                                                  <p>{ele.email}</p>
-                                                                  <p>{ele.review}</p>
-                                                            </div>
-                                                      )
-                                                })
-                                          }
-                                          <Form  
-                                                handleReviewSubmit = {handleReviewSubmit}
-                                          />
-                                          </div>
-                              </div> */}
                         </div>
                   </div>
             </div>

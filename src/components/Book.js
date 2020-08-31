@@ -7,7 +7,7 @@ const Book = ({ title, author, blurb, bookID, img, index, key }) => {
                   <Link className="book-item d-flex flex-row no-wrap align-items-center mb-3" to={{pathname: `/book/${bookID}`, state: {title, author, blurb, bookID, img}}}>
                         <div>
                               <div className="bookImgBox">
-                                    <img src={img} />
+                                    <img src={img} alt={title + 'img'}/>
                               </div>
                         </div>
                         <div className="book-content d-flex justify-content-center flex-column pl-2">

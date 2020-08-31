@@ -5,7 +5,6 @@ const {REACT_APP_JSONBOX_URL} = process.env
 let keys = ["title", "author", "blurb", "img", "publisher"]
 
 const getTXT = () => {
-      console.log(REACT_APP_JSONBOX_URL)
       axios.get(`https://raw.githubusercontent.com/moonvd/hw/master/books.txt`)
       .then(res => {
             let data = res.data 
@@ -26,7 +25,7 @@ const getTXT = () => {
                               obj[keys[i]] = isNaN(Number(el[i])) ? el[i] : +el[i];
                         }
                   }
-                  axios.post(`https://jsonbox.io/box_d0942f52595aa54869db/books`, 
+                  axios.post(`${REACT_APP_JSONBOX_URL}/books`, 
                         obj,
                         {
                               headers: {
