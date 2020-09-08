@@ -21,10 +21,11 @@ const getTXT = () => {
                               let publisher = sanitizeArr[1].toString().trim()
                               obj[keys[i]] = ele
                               obj["publisher"] = publisher
-                        } else {
-                              obj[keys[i]] = isNaN(Number(el[i])) ? el[i] : +el[i];
+                        } else { 
+                              obj[keys[i]] = el[i]
                         }
                   }
+                  // console.log(obj)
                   axios.post(`${REACT_APP_JSONBOX_URL}/books`, 
                         obj,
                         {
