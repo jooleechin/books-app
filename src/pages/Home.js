@@ -10,6 +10,7 @@ const Home = () => {
       const fetchBooks = async() => {
             const { data, status } = await axios.get(`${REACT_APP_JSONBOX_URL}/books`)
             if (status === 200) setBooks(data)
+            // error handling should be here, with an error message
       }
 
       useEffect(() => {

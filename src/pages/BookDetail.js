@@ -27,7 +27,7 @@ const Book = () => {
                   title, 
                   bookID
             }
-            const { data, status } = await axios.post(`${REACT_APP_JSONBOX_URL}reviews`, body)
+            const { data, status } = await axios.post(`${REACT_APP_JSONBOX_URL}/reviews`, body)
             if (status === 200) {
                   setReviews([...reviews, data])
                   setNavItem("Reviews")
@@ -38,7 +38,7 @@ const Book = () => {
 
       useEffect(() => {
             const fetchReviewsByBookID = async() => {
-                  let {data, status} = await axios.get(`${REACT_APP_JSONBOX_URL}reviews`)
+                  let {data, status} = await axios.get(`${REACT_APP_JSONBOX_URL}/reviews`)
                   if (status === 200) { 
                         let reviews = data.filter(ele => ele.bookID === bookID)
                         setReviews(reviews)
