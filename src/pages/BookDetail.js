@@ -48,7 +48,7 @@ const Book = () => {
                   }
             }
             fetchReviewsByBookID()
-      }, [reviews])
+      }, [])
 
       const renderNav = () => {
             switch (navItem) {
