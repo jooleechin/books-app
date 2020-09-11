@@ -12,7 +12,7 @@ const {REACT_APP_JSONBOX_URL} = process.env
 const Book = () => {
       const [reviews, setReviews] = useState([]) 
       const [navItem, setNavItem] = useState("") 
-      const [alert, setAlert] = useState("") 
+      const [alert, setAlert] = useState("")
       
       const history = useHistory()
       const { title, author, img, blurb, bookID } = history.location.state
